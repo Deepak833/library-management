@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management</title>
+  </head>
+  <body>
+    <script>
+      class Library {
+        constructor(user, password) {
+          this.user = user;
+          this.password = password;
+        }
+        usertype() {
+          console.log(
+            "checkuser is librarian or staff or normal user Use User class here"
+          );
+        }
+        userlogin() {
+          console.log("check for username and password");
+        }
+
+        userLogout() {
+          console.log("check if user is logged in then execute logout");
+        }
+      }
+      class Book {
+        constructor(bookid, bookTitle, author, isbn, publisher, booklanguage) {
+          this.bookid = bookid;
+          this.bookTitle = bookTitle;
+          this.author = author;
+          this.isbn = isbn;
+          this.publisher = publisher;
+          this.booklanguage = booklanguage;
+          this.publishedDate = new Date();
+        }
+        get availablebooks() {
+          return this.bookTitle;
+        }
+        get author() {
+          return this.author;
+        }
+        get volumeofBook() {
+          return this.volume;
+        }
+        set volumeofBook(volume) {
+          this.volume = volume;
+        }
+
+        get isbn() {
+          return this.isbn;
+        }
+        set edition(edition) {
+          this.edition = edition;
+        }
+        updatebookRecord() {
+          console.log("update records of book" + this.bookid);
+        }
+        deleteBookRecord() {
+          console.log("delete book record");
+        }
+      }
+
+      class User {
+        constructor(userID, userName) {
+          this.userID = userID;
+          this.userName = userName;
+          this.dateofJoining = new Date();
+        }
+
+        get UsrId() {
+          return this.userID;
+        }
+        availableAccount() {
+          let gotUser = getUser();
+          if (gotUSer) {
+            console.log("User is available");
+            console.log("redirect to login page");
+          } else {
+            console.log("take the user to login page");
+          }
+        }
+        registerUser() {
+          console.log("Register the new User");
+        }
+        verifyUser() {
+          console.log("Check the user availabiliy");
+        }
+        issuedBookToUser() {
+          console.log("book issued to user");
+        }
+      }
+
+      class Librarian extends User {
+        constructor(userID, userName) {
+          super(userID, userName);
+        }
+        verifyLibrarian() {
+          console.log("verify the librarian");
+        }
+
+        seachTheBook() {
+          console.log("Search Book here");
+        }
+      }
+      class Teacher extends User {
+        constructor(userID, userName, department, cls_standard) {
+          super(userID, userName);
+          this.department = department;
+          this.cls_standard = cls_standard;
+        }
+      }
+
+      class Student extends User {
+        constructor(userID, userName, cls_standard) {
+          super(userID, userName);
+          this.cls_standard = cls_standard;
+        }
+      }
+      let lb1 = new User(123, "Deepak");
+      console.log(lb1);
+      //   class Librarian extends User {}
+
+      class Genre extends Book {
+        constructor(
+          bookid,
+          bookTitle,
+          author,
+          isbn,
+          publisher,
+          booklanguage,
+          genre
+        ) {
+          super(bookid, bookTitle, author, isbn, publisher, booklanguage);
+          this.genre = genre;
+        }
+
+        static fictionalGeneres = [
+          "Action and Adventure",
+          "Anthology",
+          "Classic",
+          "Comic and Graphic Novel",
+          "Crime and Detective",
+          "Drama",
+          "Fable",
+          "Fairy Tale",
+          "Fan-Fiction",
+          "Fantasy",
+          "Historical Fiction",
+          "Horror",
+          "Humor",
+          "Legend",
+          "Magical Realism",
+          "Mystery",
+          "Mythology",
+          "Realistic Fiction",
+          "Romance",
+          "Satire",
+          "Science Fiction",
+          "Short Story",
+        ];
+
+        static Nonfictional = [
+          "Biography",
+          "Essay",
+          "Memoir",
+          "Narrative Nonfiction",
+          "Periodicals",
+          "Reference Books",
+          "Self-help Book",
+          "Speech",
+          "Textbook",
+          "Poetry",
+          "Science",
+          "Math",
+          "Sports and leisure",
+          "Computer Science",
+          "History",
+          "Politics",
+          "Philosophy",
+          "Religion, spirituality, and new age",
+        ];
+      }
+
+      class Author {
+        constructor(name, email, gender) {
+          this.name = name;
+          this.email = email;
+          this.gender = gender;
+        }
+        get authorName() {
+          return this.name;
+        }
+
+        get Email() {
+          return this.email;
+        }
+        get gender() {
+          return this.gender;
+        }
+        set UpdateEmail(email) {
+          this.email = email;
+        }
+      }
+
+      class PublicationCmpny {
+        constructor(
+          compnyName,
+          cmsionName,
+          acqEditor,
+          contentDvlpEditor,
+          techEditor,
+          indexer,
+          prdCoordinator
+        ) {
+          this.compnyName = compnyName;
+          cmsionName = cmsionName;
+          this.acqEditor = acqEditor;
+          this.contentDvlpEditor = contentDvlpEditor;
+          this.techEditor = techEditor;
+          this.indexer = indexer;
+          this.prdCoordinator = prdCoordinator;
+        }
+
+        writer() {
+          authorName = new Author();
+          console.log(authorName);
+        }
+      }
+    </script>
+  </body>
+</html>
